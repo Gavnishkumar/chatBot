@@ -2,8 +2,6 @@ import React, {  useEffect, useRef, useState } from 'react'
 import MessageTemp from './MessageTemp'
 import { validatePhoneNumber,validateEmail } from '../Functions/MyFunctions';
 import axios from 'axios';
-import { ContextState } from '../Context/Createcontext';
-import ScrollableFeed from 'react-scrollable-feed'
 const mydata={
   "anyHarassment":'',
   "safe":'',
@@ -28,20 +26,7 @@ const Chatbox = () => {
   const [index, setIndex] = useState(1);
   const [answer,setAnswer]=useState([""]);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
-  // const bottomRef=useRef(null);
   const bottomRef = useRef(null);
-  // const scrollToBottom=ContextState();
-  
-  // const scrollToBottom = () => {
-  //   // Access the scrollable div element using the ref
-  //   const scrollableDiv = bottomRef.current;
-    
-  //   // Scroll to the bottom
-  //   if (scrollableDiv) {
-  //     scrollableDiv.scrollTop = scrollableDiv.scrollHeight;
-  //   }
-  // };
- 
     useEffect(() => {
         // Update screenWidth when the window is resized
         const handleResize = () => {
